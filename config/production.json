@@ -1,0 +1,4 @@
+{
+	"mongodbURL":"mongodb://127.0.0.1/crNotesProd",
+	"port":"3000"
+}
