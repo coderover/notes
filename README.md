@@ -73,7 +73,7 @@ Following APIs have been implemented
 1. Delete a note
 
 	```bash
-	$ curl -X DELETE -u system:Sy5t3m  http://localhost:3000/note/1
+	$ curl -X DELETE -u system:Sy5t3m  http://localhost:3000/notes/1
 	```
 
 ## License
