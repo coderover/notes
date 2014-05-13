@@ -9,7 +9,7 @@ module.exports = exports = function(app) {
 	
 	app.post('/notes', notes.create);		// CREAT
 	app.get('/notes/:id', notes.get);		// GET
-	app.put('/notes/:id', notes.update);	// UPDATE
+	app.put('/notes', notes.update);	// UPDATE
 	app.del('/notes/:id', notes.delete);	// DELETE
 	app.get('/notes', notes.list);			// GET LIST
 }

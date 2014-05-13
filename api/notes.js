@@ -28,6 +28,7 @@ exports.create = function(req, res) {
 // Get a note by id
 exports.get = function(req, res){
 	var id = req.params.id;
+
 	Notes.findOne({id: id}).select('id title -_id').exec(function(err, data) {
 		if (err) {
 			logger.error(err);
@@ -45,8 +46,11 @@ exports.get = function(req, res){
 
 // Update a note
 exports.update = function(req, res) {
-	var id = req.params.id;
-	Notes.findOneAndUpdate({id:id}, {title:req.body.title}, function(err,obj) {
+	if(!req.body.id || !req.body.title){
+		res.status(400).send("Bad Request !");
+		return
+	}
+	Notes.findOneAndUpdate({id:req.body.id}, {title:req.body.title}, function(err,obj) {
 		if (err) {
 			logger.error(err);
 			res.status(500).send(err);

@@ -65,9 +65,9 @@ describe('/notes', function() {
   });
 
   it('update newly created note', function(done) {
-    api.put('/notes/' + id)
+    api.put('/notes/')
     .auth('system', 'Sy5t3m')
-    .send({title:"updated note"})
+    .send({id:id,title:"updated note"})
     .expect(200)
     .expect('Content-Type', /json/)
     .end(function(err, res) {
