@@ -67,7 +67,7 @@ Following APIs have been implemented
 1. Update a note
 
 	```bash
-	$ curl -X PUT -d "title=updated title"  -u system:Sy5t3m http://localhost:3000/notes/1
+	$ curl -X PUT -d "id=1" -d "title=updated title"  -u system:Sy5t3m http://localhost:3000/notes
 	```
 
 1. Delete a note
